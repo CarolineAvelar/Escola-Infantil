@@ -24,4 +24,28 @@ Uma escola infantil precisa de um sistema de gestão que visa gerenciar alunos, 
 ## 📋 2 - Modelagem Conceitual
 
 Agora é o momento de compilar todas essas informações e convertê-las em um diagrama:
-()
+![DER](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/modelo%20conceitual.png)
+
+
+## 🔧 3 - Modelo Lógico:
+
+Para realizar essa etapa, as entidades serão convertidas em tabelas e os atributos se transformarão em campos para armazenar os dados. A seguir, apresento como ficou a minha representação:
+
+![DER](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/Modelo%20L%C3%B3gico.png)
+
+
+## ⚙️ 4 - Modelagem Física
+
+A partir do modelo lógico executei as tabelas do meu banco, colocando restrições nos atributos (primary key, not null, etc...).
+
+sql
+CREATE TABLE Alunos(
+  id_aluno		  INTEGER      primary key  IDENTITY,
+  nome_aluno	  VARCHAR(200)  NOT NULL,
+  dt_nasc         DATE          NOT NULL,
+  estado		  CHAR(2),    
+  cidade		  VARCHAR(100),
+  nome_rua	      VARCHAR(100),
+  num_resid	      INTEGER
+);
+
