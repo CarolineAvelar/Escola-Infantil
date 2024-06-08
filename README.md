@@ -2,7 +2,7 @@
 Eu elaborei este banco de dados como parte de um exercício proposto pelo professor da faculdade. Todos nós alunos fomos desafiados a criar um cenário fictício, e o meu cenário foi uma escola infantil. Desenvolvi o banco de dados desde o conceitual até o físico, aplicando meus conhecimentos de modelagem de dados e implementação de bancos de dados para atender às necessidades específicas de uma instituição educacional.
 
 
-## 🚀 1 - Apresentando o Cenário
+## 🚀 1 - Apresentando o Cenário:
 Para começar a modelagem de um banco de dados, o primeiro passo é definir o cenário para entender as futuras entidades, atributos e relacionamentos. Logo abaixo está o meu cenário:
 
 ### Escola Infantil
@@ -21,7 +21,7 @@ Uma escola infantil precisa de um sistema de gestão que visa gerenciar alunos, 
 • Um professor é o responsável por uma turma, e uma turma tem apenas um professor responsável.
 
 
-## 📋 2 - Modelagem Conceitual
+## 📋 2 - Modelagem Conceitual:
 
 Agora é o momento de compilar todas essas informações e convertê-las em um diagrama:
 ![DER](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/modelo%20conceitual.png)
@@ -33,8 +33,7 @@ Para realizar essa etapa, as entidades serão convertidas em tabelas e os atribu
 
 ![DER](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/Modelo%20L%C3%B3gico.png)
 
-
-## 📑 4 - Modelagem Física
+## 📑 4 - Modelagem Física:
 
 A partir do modelo lógico executei as tabelas do meu banco, colocando restrições nos atributos (primary key, not null, etc...).
 
@@ -388,7 +387,7 @@ INSERT INTO Notas VALUES (19, 2, 6.5);
 INSERT INTO Notas VALUES (20, 1, 9.0);
 ```
 
-## 🔤 6 - CRUD
+## 🔤 6 - CRUD:
 
 O CRUD permite a manipulação completa dos dados. Com ele, podemos C- Criar Dados, R- Selecionar os Dados, U- Atualizar os Dados e D- Deletar os Dados. Essas operações essenciais fornecem uma estrutura sólida para gerenciar dados de forma eficaz e eficiente.
 Para melhor demonstração, executei estas 4 operações em uma tabela:
@@ -401,7 +400,7 @@ INSERT INTO Alunos (nome_aluno, dt_nasc, cidade) Values
 
 Em segundo selecionei os dados da tabela Alunos para ver o resultado
 ```sql
-SELECT id_aluno, nome_aluno, dt_nasc, cidade FROM Alunos
+SELECT * FROM Alunos
 ```
 Resultado no SQL:
 
@@ -423,7 +422,6 @@ DELETE FROM ALUNOS WHERE id_aluno=21;
 Resultado no SQL:
 
 ![1.3](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/cruD%20(4).png)
-
 ## 🧮 7 - Relatórios:
 
 Por último, este tópico inclui exemplos e informações sobre as operações básicas fundamentais em bancos de dados: Filtro, Ordenação e Seleção. Essas operações são essenciais para manipular e acessar dados de maneira eficiente.
@@ -431,4 +429,118 @@ Estas operações foram aplicadas neste banco de dados, onde foram fundamentais 
 
 Realizei 10 consultas para demonstração:
 
-Na primeira, o bonjetivo era 
+1- O intuito é apresentar o nome da turma, a data em que se iniciaram, a data final e a duração da turma em anos, que é um atributo derivado no modelo conceitual.
+```sql
+select nome_turma, dt_inicio, dt_fim, duracao_anos from Turmas;
+```
+
+Resultado no SQL:
+
+![1.1](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%201-1.png)
+![1.2](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%201-2.png)
+![1.3](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%201-3.png)
+
+
+2- O intuito é apresentar o nome de todos o professores que começam com a letra A.
+```sql
+SELECT Nome_Professor FROM Professores WHERE Nome_Professor LIKE 'A%';
+```
+
+Resultado no SQL:
+
+![2](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%202.png)
+
+
+3- O intuito é mostrar o nome das disciplinas que possuem cargas horárias 12 ou 14.
+```sql
+SELECT nome_disciplina, carga_horaria FROM Disciplinas WHERE carga_horaria IN (12.0, 14.0);
+```
+
+Resultado no SQL:
+
+![3](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%203.png)
+
+
+4- O intuito é apresentar o nome de todos os alunos que começam com a lera L.
+```sql
+SELECT nome_aluno FROM Alunos WHERE nome_aluno LIKE 'L%';
+```
+
+Resultado no SQL:
+
+![4](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%204.png)
+
+
+5- O intuito é apresentar o nome e o salário dos professores que são entre 5500 e 6200.
+```sql
+SELECT nome_professor, salario FROM Professores WHERE salario > 5500 AND salario < 6200;
+```
+
+Resultado no SQL:
+
+![5](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%205.png)
+
+
+6- O intuito é mostrar o nome dos alunos em ordem decrescente
+```sql
+SELECT nome_aluno FROM Alunos ORDER BY nome_aluno DESC;
+```
+
+Resultado no SQL:
+![6.1](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%206-1.png)
+![6.2](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%206-2.png)
+![6.3](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%206-3.png)
+
+7- O intuito é exibir o nome dos professores e a disciplinas que eles ministram, e as disciplinas aparecem em ordem decrescente
+```sql
+SELECT P.Nome_Professor, D.Nome_Disciplina FROM Professores P, Disciplinas D
+WHERE P.id_professor = D.id_professor ORDER BY D.nome_disciplina DESC;
+```
+
+Resultado no SQL:
+
+![7.1](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%207-1.png)
+![7.2](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%207-2.png)
+![7.3](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%207-3.png)
+
+8- O intuito é mostar o nome dos alunos, a cidade que eles residem e o número de suas redidências, mas só irá aparecer aqueles que o número da residência for entre 100 e 250.
+```sql
+SELECT nome_aluno, cidade, num_resid FROM Alunos
+WHERE num_resid BETWEEN 100 AND 250;
+```
+
+Resultado no SQL:
+
+![8](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%208.png)
+
+9- O intuito é apresentar o nome dos alunos em ordem alfabética e as suas resplectivas notas, mas só irá aparecer aqueles em que as notas forem entre 7.5 e 9.
+```sql
+SELECT nome_aluno, nota_aluno FROM Alunos, Notas 
+WHERE Alunos.id_aluno = Notas.id_nota AND nota_aluno BETWEEN 7.5 AND 9 ORDER BY nome_aluno ASC;
+```
+
+Resultado no SQL:
+
+![9.1](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%209-1.png)
+![9.2](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%209-2.png)
+
+
+10- O intuito é exibir todos os alunos geminianos.
+```sql
+SELECT * FROM Alunos WHERE MONTH (dt_nasc) = 5 AND DAY(dt_nasc) >= 21
+OR MONTH(dt_nasc) = 6 AND DAY(dt_nasc) <= 20;
+```
+
+Resultado no SQL:
+
+![10](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%2010.png)
+
+## 🖋️ Recursos Utilizados
+
+Clique nos links abaixo para acessar meus códigos-fonte e imagens utilizadas:
+
+Codificação - Código-fonte SQL- (https://github.com/CarolineAvelar/Escola-Infantil/blob/main/prova.sql)
+Galeria - Prints dos Códigos - (https://github.com/CarolineAvelar/Escola-Infantil/tree/main/imagens%20Banco%20de%20dados)
+
+---
+💻 com ❤️ [Caroline Avelar](https://github.com/CarolineAvelar).
