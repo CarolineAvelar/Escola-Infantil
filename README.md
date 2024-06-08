@@ -543,8 +543,9 @@ Resultado no SQL:
 
 Clique nos links abaixo para acessar meus códigos-fonte e imagens utilizadas:
 
-Codificação - Código-fonte SQL- (https://github.com/CarolineAvelar/Escola-Infantil/blob/main/prova.sql)
-Galeria - Prints dos Códigos - (https://github.com/CarolineAvelar/Escola-Infantil/tree/main/imagens%20Banco%20de%20dados)
+• Codificação - Código-fonte SQL- (https://github.com/CarolineAvelar/Escola-Infantil/blob/main/prova.sql)
+
+• Galeria - Prints dos Códigos - (https://github.com/CarolineAvelar/Escola-Infantil/tree/main/imagens%20Banco%20de%20dados)
 
 ---
 💻 com ❤️ [Caroline Avelar](https://github.com/CarolineAvelar).
