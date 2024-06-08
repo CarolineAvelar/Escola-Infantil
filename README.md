@@ -487,9 +487,13 @@ SELECT nome_aluno FROM Alunos ORDER BY nome_aluno DESC;
 ```
 
 Resultado no SQL:
+
 ![6.1](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%206-1.png)
+
 ![6.2](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%206-2.png)
+
 ![6.3](https://github.com/CarolineAvelar/Escola-Infantil/blob/main/imagens%20Banco%20de%20dados/consulta%206-3.png)
+
 
 7- O intuito é exibir o nome dos professores e a disciplinas que eles ministram, e as disciplinas aparecem em ordem decrescente
 ```sql
